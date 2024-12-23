@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function TaskForm({ addTask }) {
   const [task, setTask] = useState("");
@@ -27,7 +27,9 @@ export function TaskForm({ addTask }) {
         onChange={(e) => setTime(e.target.value)}
         className="border rounded p-2"
       />
-      <button type="submit" className="bg-blue-600 text-white py-2 rounded">Add Task</button>
+      <button type="submit" className="bg-blue-600 text-white py-2 rounded">
+        Add Task
+      </button>
     </form>
   );
 }

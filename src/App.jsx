@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { useLocalStorage } from './hooks/useLocalStorage';
-import { Header } from './components/Header';
-import { TaskForm } from './components/TaskForm';
-import { TaskList } from './components/TaskList';
-import { Timer } from './components/Timer';
+import { useState, useEffect } from "react";
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import { Header } from "./components/Header";
+import { TaskForm } from "./components/TaskForm";
+import { TaskList } from "./components/TaskList";
+import { Timer } from "./components/Timer";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("tasks", []);
@@ -18,7 +18,10 @@ function App() {
 
   useEffect(() => {
     const checkTasks = setInterval(() => {
-      const now = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
+      const now = new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
       tasks.forEach((task) => {
         if (task.time === now && !task.completed) {
           alert(`Time's up for ${task.task}!`);
